@@ -1,0 +1,17 @@
+{
+  "name": "note_test",
+  "authors": [
+    "Vladimir Kirejko <kirejko@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

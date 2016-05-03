@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html></html>
+<head>
+  <title>Test Note</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true  %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true  %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container">
+<div class="col-ld-6 col-ld-offset-3">
+  <div class="page-header">
+    <div class="row">
+      <div class="col-md-9">
+        <h2><%= link_to "Test Note", root_path %></h2>
+        <p>Simple notes...</p>
+      </div>
+      <div class="col-md-3">
+        <% if user_signed_in? %>
+         <%= link_to "New Note", new_note_path, class: 'btn btn-primary' %>
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
+        <% else %>
+          <%= link_to "Log In", new_user_session_path, class: 'btn btn-success' %>
+          <%= link_to "Sing Up", new_user_registration_path, class: 'btn btn-warning' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <p class="bg-warning">
+    <%= notice %>
+  </p>
+  <p class="bg-danger">
+    <%= alert %>
+  </p>
+  <%= yield %>
+</div>
+</div>
+</body>
